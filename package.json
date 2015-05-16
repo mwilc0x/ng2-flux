@@ -1,0 +1,32 @@
+{
+  "name": "ng2-flux",
+  "version": "1.0.0",
+  "description": "angular2 flux boilerplate",
+  "scripts": {
+    "start": "make -j",
+    "test": "true"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mjws56/ng2-flux.git"
+  },
+  "keywords": [
+    "angular2",
+    "flux"
+  ],
+  "author": "Mike Wilcox <mwilcox56@gmail.com> (http://github.com/mjw56)",
+  "license": "MIT",
+  "homepage": "https://github.com/mjw56/ng2-flux",
+  "devDependencies": {
+    "babel": "^5.4.3",
+    "cheerio": "^0.17.0",
+    "es6-promise": "^2.1.1",
+    "eventemitter2": "^0.4.14",
+    "express": "^4.12.3",
+    "flux": "^2.0.3",
+    "immutable": "^3.7.2",
+    "request": "^2.55.0",
+    "tsd": "^0.5.7",
+    "whatwg-fetch": "^0.8.1"
+  }
+}

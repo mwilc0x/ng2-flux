@@ -1,0 +1,33 @@
+{
+  "version": "v4",
+  "repo": "borisyankov/DefinitelyTyped",
+  "ref": "master",
+  "path": "typings",
+  "bundle": "typings/tsd.d.ts",
+  "installed": {
+    "angular2/angular2.d.ts": {
+      "commit": "b3834d886a95789e6ab56e8244775ec10c5293d0"
+    },
+    "node/node.d.ts": {
+      "commit": "b3834d886a95789e6ab56e8244775ec10c5293d0"
+    },
+    "cheerio/cheerio.d.ts": {
+      "commit": "b3834d886a95789e6ab56e8244775ec10c5293d0"
+    },
+    "request/request.d.ts": {
+      "commit": "b3834d886a95789e6ab56e8244775ec10c5293d0"
+    },
+    "es6-promise/es6-promise.d.ts": {
+      "commit": "b3834d886a95789e6ab56e8244775ec10c5293d0"
+    },
+    "whatwg-fetch/whatwg-fetch.d.ts": {
+      "commit": "b3834d886a95789e6ab56e8244775ec10c5293d0"
+    },
+    "flux/flux.d.ts": {
+      "commit": "7d2f0aa875cc3bc41f3567e3ff99d344df986155"
+    },
+    "eventemitter2/eventemitter2.d.ts": {
+      "commit": "7d2f0aa875cc3bc41f3567e3ff99d344df986155"
+    }
+  }
+}

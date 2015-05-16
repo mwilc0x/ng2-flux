@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+<head>
+	<title>ng2-flux</title>
+
+    <script src="https://github.jspm.io/jmcriffey/bower-traceur-runtime@0.0.87/traceur-runtime.js"></script>
+    <script src="https://jspm.io/system@0.16.js"></script>
+    <script src="https://code.angularjs.org/2.0.0-alpha.23/angular2.dev.js"></script>
+
+</head>
+<body>
+    <app>Loading...</app>
+    <script>
+        System.import('src/app.ng2');
+
+				System.paths['flux'] = 'node_modules/flux/index.js'
+				System.paths['lib/Dispatcher'] = 'node_modules/flux/lib/Dispatcher.js'
+				System.paths['lib/invariant'] = 'node_modules/flux/lib/invariant.js'
+				System.paths['eventemitter2'] = 'node_modules/eventemitter2/index.js'
+				System.paths['lib/eventemitter2'] = 'node_modules/eventemitter2/lib/eventemitter2.js'
+				System.paths['immutable'] = 'node_modules/immutable/dist/immutable.js'
+    </script>
+</body>
+
+</html>
