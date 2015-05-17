@@ -24,8 +24,15 @@
     "eventemitter2": "^0.4.14",
     "express": "^4.12.3",
     "flux": "^2.0.3",
+    "gulp": "^3.8.11",
+    "gulp-typescript": "^2.7.4",
+    "gulp-util": "^3.0.4",
     "immutable": "^3.7.2",
+    "keymirror": "^0.1.1",
+    "merge2": "^0.3.5",
     "request": "^2.55.0",
+    "rx": "^2.5.2",
+    "systemjs-builder": "^0.10.6",
     "tsd": "^0.5.7",
     "whatwg-fetch": "^0.8.1"
   }

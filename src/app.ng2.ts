@@ -32,7 +32,7 @@ class App {
 		this.name = 'NY Times Best Seller List ';
 
 		actions.getBooks();
-		
+
 		this._bookStore = BookStore;
 
 		this._bookStore.addChangeListener(this.update.bind(this))

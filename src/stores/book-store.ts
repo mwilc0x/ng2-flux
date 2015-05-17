@@ -2,36 +2,39 @@
 
 import * as EventEmitter2 from 'eventemitter2';
 import * as Dispatcher from '../utils/dispatcher';
-// import {List, Record, Map} from "immutable";
-//
-// interface Date extends Map<string, any> {
-//   curr: string
-//   prev: string;
-//   next: string;
-// }
-//
-// interface Book extends Map<string, any> {
-//   id: number;
-//   index: string;
-//   summary: string;
-// }
-//
-// interface BookList {
-//   books:List<Book>;
-//   date:Date;
-//   title:string;
-// }
+import {List, Record, Map} from "immutable";
+
+interface Date extends Map<string, any> {
+  curr: string
+  prev: string;
+  next: string;
+}
+
+interface Book extends Map<string, any> {
+  id: number;
+  index: string;
+  summary: string;
+}
+
+interface BookList {
+  books:List<Book>;
+  date:Date;
+  title:string;
+}
+
+interface Library extends Map<string, any> {
+  bookList: List<BookList>
+}
 
 class BookStore extends EventEmitter2 {
 
   private _CHANGE_EVENT: string;
-  private _bookList: any;
+  private _bookList: Library;
   private _date: any;
 
   constructor() {
     super();
     this._CHANGE_EVENT = 'change';
-    this._bookList = {};
     Dispatcher.register(this._dispatchToken.bind(this));
   }
 
@@ -44,7 +47,7 @@ class BookStore extends EventEmitter2 {
   }
 
   getBooks() {
-    return this._bookList;
+    return this._bookList.toJS().bookList;
   }
 
   private _emitChange() {
@@ -56,7 +59,7 @@ class BookStore extends EventEmitter2 {
   }
 
   private _addBooks(data) {
-    this._bookList = data;
+    this._bookList = <Library>Map({ bookList: data });
   }
 
   private _dispatchToken(action: any) {
