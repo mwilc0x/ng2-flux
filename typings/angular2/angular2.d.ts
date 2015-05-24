@@ -44,7 +44,7 @@ interface _ComponentArg {
    *
    */
   selector: string;
-  
+
   /**
    * Enumerates the set of properties that accept data binding for a directive.
    *
@@ -136,7 +136,7 @@ interface _ComponentArg {
    *
    */
   properties?: Object;
-  
+
   /**
    * Specifies which DOM hostListeners a directive listens to.
    *
@@ -192,7 +192,7 @@ interface _ComponentArg {
    *
    */
   hostListeners?: Object;
-  
+
   /**
    * Defines the set of injectable objects that are visible to a Component and its children.
    *
@@ -240,14 +240,14 @@ interface _ComponentArg {
    * ```
    */
   injectables?: List<any>;
-  
+
   /**
    * Specifies a set of lifecycle hostListeners in which the directive participates.
    *
    * See {@link onChange}, {@link onDestroy}, {@link onAllChangesDone} for details.
    */
   lifecycle?: List<any>;
-  
+
   /**
    * Defines the used change detection strategy.
    *
@@ -267,14 +267,14 @@ interface _ViewArg {
    * NOTE: either `templateUrl` or `template` should be used, but not both.
    */
   templateUrl?: string;
-  
+
   /**
    * Specifies an inline template for an angular component.
    *
    * NOTE: either `templateUrl` or `template` should be used, but not both.
    */
   template?: string;
-  
+
   /**
    * Specifies a list of directives that can be used within a template.
    *
@@ -282,7 +282,7 @@ interface _ViewArg {
    */
   directives?: List<Type>;
 }
-  
+
 declare module "angular2/angular2" {
   /**
    * Bootstrapping for Angular applications.
@@ -388,7 +388,7 @@ declare module "angular2/angular2" {
    *
    */
   function bootstrap(appComponentType: any): void;
-  
+
   /**
    * Declare reusable UI building blocks for an application.
    *
@@ -468,7 +468,7 @@ declare module "angular2/angular2" {
    *
    */
   function Component(arg: _ComponentArg): (target: any) => any;
-  
+
   /**
    * Declares the available HTML templates for an application.
    *
@@ -501,7 +501,7 @@ declare module "angular2/angular2" {
    *
    */
   function View(arg: _ViewArg): (target: any) => any;
-  
+
   /**
    * The `For` directive instantiates a template once per item from an iterable. The context for each
    * instantiated template inherits from the outer context with the given loop variable set to the
@@ -534,7 +534,7 @@ declare module "angular2/angular2" {
    *
    */
   function For(): void;
-  
+
   /**
    * Removes or recreates a portion of the DOM tree based on an {expression}.
    *
@@ -558,7 +558,7 @@ declare module "angular2/angular2" {
    *
    */
   function If(): void;
-  
+
   /**
    * The `NonBindable` directive tells Angular not to compile or bind the contents of the current
    * DOM element. This is useful if the element contains what appears to be Angular directives and
@@ -574,7 +574,7 @@ declare module "angular2/angular2" {
    *
    */
   function NonBindable(): void;
-  
+
   /**
    * The `Switch` directive is used to conditionally swap DOM structure on your template based on a
    * scope expression.
