@@ -1,6 +1,6 @@
 /// <reference path="../../../typings/tsd.d.ts" />
 
-import {Component, View, For} from 'angular2/angular2';
+import {Component, View, NgFor} from 'angular2/angular2';
 import {Book} from '../book/book';
 
 @Component({
@@ -10,11 +10,11 @@ import {Book} from '../book/book';
     }
 })
 @View({
-    directives: [For, Book],
+    directives: [NgFor, Book],
     template: `
-        <div *for="#list of lists">
+        <div *ng-for="#list of lists">
             <h2>{{list.title}}</h2>
-            <div *for="#book of list.books">
+            <div *ng-for="#book of list.books">
                 <book [book]="book"></book>
             </div>
         </div>
