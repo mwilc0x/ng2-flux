@@ -1,0 +1,33 @@
+
+/* TEAM */
+
+
+dev: mike wilcox
+
+
+Site: http://mjw56.github.io/
+
+
+Twitter: @mjw56_
+
+
+/* THANKS */
+
+
+AngularClass: https://github.com/angular-class
+
+
+
+/* SITE */
+
+
+Last update: 2015/05/23
+
+
+Standards: HTML5, CSS3
+
+
+Components: Angular 2, Flux
+
+
+Software: Webpack
