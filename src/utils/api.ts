@@ -1,9 +1,11 @@
+import {Zone} from 'zone.js';
+
 declare var fetch, Zone;
 
 export class API {
 
-	getBooks() {		
+	getBooks() {
 	  return Zone.bindPromiseFn(fetch)('http://localhost:3001/books');
 	}
-	
+
 }
