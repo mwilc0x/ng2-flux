@@ -8,26 +8,24 @@ import {Home} from './components/home/home';
 import {News} from './components/news/news';
 
 @Component({
-	selector:'app'
+  selector:'app'
 })
 @View({
 	directives: [ RouterOutlet, RouterLink, Home, Header ],
 	template: `
+	  <header></header>
 
-		<header></header>
+	    <div class="container home">
 
-		<div class="container home">
+	      <main>
+		<router-outlet></router-outlet>
+	      </main>
 
-			<main>
-				<router-outlet></router-outlet>
-			</main>
-
-		</div>
-
+	    </div>
 	`,
 })
 @RouteConfig([
   { path: '/', as: 'home', component: Home },
-	{ path: '/news', as: 'news', component: News }
+  { path: '/news', as: 'news', component: News }
 ])
 export class App { }
