@@ -29,6 +29,7 @@ interface Library extends Map<string, any> {
 class BookStore extends EventEmitter2 {
 
   private _CHANGE_EVENT: string;
+  private _master: Library;
   private _bookList: Library;
   private _date: any;
 
@@ -58,8 +59,32 @@ class BookStore extends EventEmitter2 {
     this._date = date;
   }
 
+  private _setMaster(data) {
+    this._master = <Library>Map({ bookList: data });
+  }
+
   private _addBooks(data) {
     this._bookList = <Library>Map({ bookList: data });
+  }
+
+  private _setBooks(data) {
+    this._bookList = <Library>Map({ bookList: data });
+  }
+
+  private _filterBooks(query) {
+
+    var filtered_lists = this._master.toJS().bookList.map((list) => {
+      return {
+        title: list.title,
+        date: list.date,
+        books: list.books.filter((book) => {
+          return book.summary.toLowerCase().indexOf(query.toLowerCase()) > -1;
+        })
+      };
+    });
+
+    this._setBooks(filtered_lists);
+    this._emitChange();
   }
 
   private _dispatchToken(action: any) {
@@ -67,8 +92,13 @@ class BookStore extends EventEmitter2 {
     switch(action.type) {
 
       case 'FETCHED_BOOKS':
+        this._setMaster(action.data);
         this._addBooks(action.data);
         this._emitChange();
+        break;
+
+      case 'USER_SEARCHED':
+        this._filterBooks(action.data);
         break;
 
       default:
