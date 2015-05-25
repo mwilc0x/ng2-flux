@@ -17,7 +17,6 @@ Twitter: @mjw56_
 AngularClass: https://github.com/angular-class
 
 
-
 /* SITE */
 
 
@@ -27,7 +26,7 @@ Last update: 2015/05/23
 Standards: HTML5, CSS3
 
 
-Components: Angular 2, Flux
+Components: Angular 2
 
 
-Software: Webpack
+Software: NodeJS, Flux, Firebase, Webpack
