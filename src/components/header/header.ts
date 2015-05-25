@@ -41,15 +41,14 @@ export class Header {
   builder: FormBuilder;
   search: ControlGroup;
 
-	constructor(private actions: Actions) {
+  constructor(private actions: Actions) {
 
       this.builder = new FormBuilder()
 
       this.search = this.builder.group({
         query: ["", Validators.required], // required
       });
-
-	}
+  }
 
   submit(event) {
     event.preventDefault();

@@ -23,18 +23,18 @@ export class Home {
 
 	constructor(actions: Actions) {
 
-		this.lists = [];
+    this.lists = [];
 
-		actions.getBooks();
+    actions.getBooks();
 
-		this._bookStore = BookStore;
+    this._bookStore = BookStore;
 
-		this._bookStore.addChangeListener(this.update.bind(this));
+    this._bookStore.addChangeListener(this.update.bind(this));
 
 	}
 
 	update() {
-		this.lists = this._bookStore.getBooks();
+    this.lists = this._bookStore.getBooks();
 	}
 
 }

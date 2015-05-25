@@ -9,7 +9,7 @@ export class API {
 	}
 
 	getHackerNews() {
-		return Zone.bindPromiseFn(fetch)('http://localhost:3001/hackernews')
+    return Zone.bindPromiseFn(fetch)('http://localhost:3001/hackernews')
 	}
 
 }

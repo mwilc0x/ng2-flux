@@ -11,17 +11,17 @@ import {News} from './components/news/news';
   selector:'app'
 })
 @View({
-	directives: [ RouterOutlet, RouterLink, Home, Header ],
-	template: `
-	  <header></header>
+  directives: [ RouterOutlet, RouterLink, Home, Header ],
+  template: `
+    <header></header>
 
-	    <div class="container home">
+    <div class="container home">
 
-	      <main>
-		<router-outlet></router-outlet>
-	      </main>
+	    <main>
+		    <router-outlet></router-outlet>
+	    </main>
 
-	    </div>
+	  </div>
 	`,
 })
 @RouteConfig([
