@@ -7,14 +7,19 @@
     "files": [
         "src/app.ts",
         "src/bootstrap.ts",
-        "src/actions/book-actions",
+        "src/actions/book-actions.ts",
+        "src/actions/news-actions.ts",
+        "src/components/about/about",
         "src/components/book-list/book-list.ts",
         "src/components/book/book.ts",
+        "src/components/header/header.ts",
         "src/components/home/home.ts",
+        "src/components/loader/loader.ts",
         "src/stores/book-store.ts",
+        "src/stores/news-store.ts",
         "src/utils/api.ts",
         "src/utils/dispatcher.ts",
-        "src/common/BrowserDomAdapter",
-        "src/common/checkIfShadowDom"
+        "src/common/BrowserDomAdapter.ts",
+        "src/common/checkIfShadowDom.ts"
     ]
 }
