@@ -41,3 +41,7 @@ PR's + Issues are welcome!
 ## Thanks
 
 Thanks to the folks at [AngularClass](https://github.com/angular-class) for the [webpack-starter](https://github.com/angular-class/angular2-webpack-starter) inspiration.
+
+## License
+
+MIT
