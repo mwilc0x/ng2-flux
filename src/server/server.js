@@ -29,7 +29,12 @@ app.use("/",  express.static(__dirname + '/public'))
 new WebpackDevServer(webpack(config), {
   contentBase: config.output.contentBase,
   publicPath: config.output.publicPath,
-  hot: true
+  hot: true,
+  quiet: false,
+  noInfo: false,
+  lazy: false,
+  watchDelay: 300,
+  stats: { colors: true },
 }).listen(3000, '0.0.0.0', (err, result) => {
   if (err) {
     console.log(err);

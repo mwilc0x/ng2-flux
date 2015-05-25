@@ -3,13 +3,13 @@
 import {Component, View, NgIf, NgFor} from 'angular2/angular2';
 import {Actions} from '../../actions/news-actions';
 import * as NewsStore from '../../stores/news-store';
-import {Loader} from '../loader/loader'
+import {Loader} from '../loader/loader';
 
 @Component({
     selector: 'news',
     properties: {
       news: 'news'
-    }
+    },
     appInjector: [Actions]
 })
 @View({
@@ -18,8 +18,8 @@ import {Loader} from '../loader/loader'
       <div *ng-if="!news">
         <loader></loader>
       </div>
-      <div *ng-for="#item of news">
-          <h3><a class="hacker-links" href={{item.url}}>{{item.title}}</a></h3>
+      <div *ng-for="#item of news, #i = index">
+          <h3>{{i}}. <a class="hacker-links" href={{item.url}}>{{item.title}}</a></h3>
       </div>
     `
 })

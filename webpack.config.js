@@ -9,6 +9,7 @@ module.exports = {
       'angular2/angular2'
     ],
     app: [
+      'webpack/hot/dev-server',
       './src/bootstrap'
     ]
   },
@@ -60,7 +61,8 @@ module.exports = {
       filename: 'common.js'
     }),
     new webpack.optimize.OccurenceOrderPlugin(),
-    new webpack.optimize.DedupePlugin()
+    new webpack.optimize.DedupePlugin(),
+    new webpack.HotModuleReplacementPlugin()
   ]
 
 };
