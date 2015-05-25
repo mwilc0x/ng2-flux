@@ -17,12 +17,12 @@ import {News} from './components/news/news';
 
     <div class="container home">
 
-	    <main>
-		    <router-outlet></router-outlet>
-	    </main>
+      <main>
+        <router-outlet></router-outlet>
+      </main>
 
-	  </div>
-	`,
+    </div>
+  `,
 })
 @RouteConfig([
   { path: '/', as: 'home', component: Home },
