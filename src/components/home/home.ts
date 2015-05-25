@@ -17,11 +17,11 @@ import * as BookStore from '../../stores/book-store';
 })
 export class Home {
 
-	lists: any;
-	_actions: any;
-	_bookStore: any;
+  lists: any;
+  _actions: any;
+  _bookStore: any;
 
-	constructor(actions: Actions) {
+  constructor(actions: Actions) {
 
     this.lists = [];
 
@@ -31,10 +31,10 @@ export class Home {
 
     this._bookStore.addChangeListener(this.update.bind(this));
 
-	}
+  }
 
-	update() {
+  update() {
     this.lists = this._bookStore.getBooks();
-	}
+  }
 
 }
