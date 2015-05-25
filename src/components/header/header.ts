@@ -43,11 +43,12 @@ export class Header {
 
   constructor(private actions: Actions) {
 
-      this.builder = new FormBuilder()
+    this.builder = new FormBuilder()
 
-      this.search = this.builder.group({
-        query: ["", Validators.required], // required
-      });
+    this.search = this.builder.group({
+      query: ["", Validators.required], // required
+    });
+    
   }
 
   submit(event) {
