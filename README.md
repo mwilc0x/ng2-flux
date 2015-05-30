@@ -49,6 +49,7 @@ PR's + Issues are welcome!
 ## TODO
 
 - [ ] Make fetching smarter
+- [ ] resolve tsc transpilation type errors (use latest ng2 type defs)
 
 ## Thanks
 
