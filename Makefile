@@ -6,4 +6,4 @@ hello:
 	@echo "\n${WELCOME}\n"
 
 webpack:
-	@npm install && babel-node src/server/server.js
+	@npm install && npm install -g babel && babel-node src/server/server.js
