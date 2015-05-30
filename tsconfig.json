@@ -19,6 +19,7 @@
         "src/stores/news-store.ts",
         "src/utils/api.ts",
         "src/utils/dispatcher.ts",
+        "src/utils/flux-recorder.ts",
         "src/common/BrowserDomAdapter.ts",
         "src/common/checkIfShadowDom.ts"
     ]
