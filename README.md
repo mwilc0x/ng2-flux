@@ -17,18 +17,19 @@ open your browser to ```http://localhost:3000```
 Scrapes live NY Times data, which is fetched from server and displayed onto the UI using Angular 2 components.
 
 Uses the flux architecture to retrieve data via actions and pipe that data through the dispatcher to a store
-which then notifies the Angular component that it has updated data. The parent Angular component then queries
-the store for this new data, and the new data is then displayed on the UI.
+which then notifies the parent Angular component that it has updated data. The parent Angular component then queries
+the store for this new data, and the new data is then passed the parent who then passes it to it's children.
 
 ![screen](/media/screen.gif)
 
 ## Tech Used
 
-- Angular 2
-- Component Router
-- Flux
-- Firebase
-- Webpack
+- [Angular 2](https://github.com/angular/angular)
+- [Component Router](https://github.com/angular/router)
+- [Flux](https://github.com/facebook/flux)
+- [Firebase](https://www.npmjs.com/package/firebase)
+- [Webpack](https://github.com/webpack/webpack)
+- [FluxRecorder](https://github.com/nextminds/FluxRecorder)
 
 ## Contributing
 
