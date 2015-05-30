@@ -3,6 +3,7 @@
 import {bootstrap, Component, View} from 'angular2/angular2';
 import {RouteConfig, RouterOutlet, RouterLink} from 'angular2/router';
 import {bind} from 'angular2/di';
+import * as Dispatcher from './utils/dispatcher';
 import {Header} from './components/header/header';
 import {Home} from './components/home/home';
 import {News} from './components/news/news';
@@ -28,4 +29,9 @@ import {News} from './components/news/news';
   { path: '/', as: 'home', component: Home },
   { path: '/news', as: 'news', component: News }
 ])
-export class App { }
+export class App {
+	constructor() {
+		Dispatcher.startRecording();
+		Dispatcher.listenToHotKeys();
+	}
+}
