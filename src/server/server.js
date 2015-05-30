@@ -35,7 +35,9 @@ new WebpackDevServer(webpack(config), {
   lazy: false,
   watchDelay: 300,
   stats: { colors: true },
+  historyApiFallback: true
 }).listen(3000, '0.0.0.0', (err, result) => {
+  
   if (err) {
     console.log(err);
   }
