@@ -18,13 +18,16 @@ npm start
 
 open your browser to ```http://localhost:3000```
 
+If you want to hack on TypeScript and have changes automatically propagated to the browser, run ```tsc -w``` from
+the project root.
+
 ## About
 
 Scrapes live NY Times data, which is fetched from server and displayed onto the UI using Angular 2 components.
 
 Uses the flux architecture to retrieve data via actions and pipe that data through the dispatcher to a store
 which then notifies the parent Angular component that it has updated data. The parent Angular component then queries
-the store for this new data, and the new data is then passed the parent who then passes it to it's children.
+the store for this new data, and the new data is then passed to the parent who then passes it down to it's children.
 
 *Easter Egg:* at anytime while using the app press ```ALT + SHIFT + C``` to get a current copy of the recorded dispatched actions.
 
