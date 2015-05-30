@@ -20,6 +20,8 @@ Uses the flux architecture to retrieve data via actions and pipe that data throu
 which then notifies the parent Angular component that it has updated data. The parent Angular component then queries
 the store for this new data, and the new data is then passed the parent who then passes it to it's children.
 
+*Easter Egg:* at anytime while using the app press ```ALT + SHIFT + C``` to get a current copy of the recorded dispatched actions.
+
 ![screen](/media/screen.gif)
 
 ## Tech Used
