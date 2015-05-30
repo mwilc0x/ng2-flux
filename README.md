@@ -10,6 +10,12 @@ ng2-flux
 make
 ```
 
+or
+
+```bash
+npm start
+```
+
 open your browser to ```http://localhost:3000```
 
 ## About
