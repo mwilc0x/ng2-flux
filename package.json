@@ -32,6 +32,7 @@
     "file-loader": "^0.8.1",
     "firebase": "^2.2.5",
     "flux": "^2.0.3",
+    "http-proxy": "^1.11.1",
     "immutable": "^3.7.2",
     "json-loader": "^0.5.1",
     "raw-loader": "^0.5.1",
