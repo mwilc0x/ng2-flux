@@ -21,6 +21,8 @@ open your browser to ```http://localhost:3000```
 If you want to hack on TypeScript and have changes automatically propagated to the browser, run ```tsc -w``` from
 the project root.
 
+[Demo](http://node-js-104909.nitrousapp.com:3000/)
+
 ## About
 
 Scrapes live NY Times data, which is fetched from server and displayed onto the UI using Angular 2 components.
