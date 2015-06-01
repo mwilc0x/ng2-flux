@@ -7,6 +7,7 @@ import * as Dispatcher from './utils/dispatcher';
 import {Header} from './components/header/header';
 import {Home} from './components/home/home';
 import {News} from './components/news/news';
+import {flux} from './utils/flux';
 
 @Component({
   selector:'app'
@@ -29,9 +30,5 @@ import {News} from './components/news/news';
   { path: '/', as: 'home', component: Home },
   { path: '/news', as: 'news', component: News }
 ])
-export class App {
-	constructor() {
-		Dispatcher.startRecording();
-		Dispatcher.listenToHotKeys();
-	}
-}
+@flux(Dispatcher)
+export class App { }
