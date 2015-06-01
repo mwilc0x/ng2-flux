@@ -1,6 +1,12 @@
 var webpack = require('webpack');
+var path = require('path');
+var appPath = path.resolve(__dirname, 'src');
+var nodeModulesPath = path.resolve(__dirname, 'node_modules');
+var buildPath = path.resolve(__dirname, 'public', 'build');
 
-module.exports = {
+var config = {
+  context: __dirname,
+  devtool: 'eval-source-map',
 
   entry: {
     angular2: [
@@ -9,16 +15,16 @@ module.exports = {
       'angular2/angular2'
     ],
     app: [
+      'webpack-dev-server/client?http://localhost:3000',
       'webpack/hot/dev-server',
       './src/bootstrap'
     ]
   },
 
   output: {
-    path: '/',
+    path: buildPath,
     filename: '[name].js',
-    contentBase: 'public/',
-    publicPath: '/public/'
+    publicPath: '/build/'
   },
 
   resolve: {
@@ -40,17 +46,13 @@ module.exports = {
 
   module: {
     loaders: [
-      { test: /\.json$/, loader: 'json' },
-      { test: /\.css$/, loader: 'raw' },
-      { test: /\.(png|jpg|gif|woff|eot|ttf|svg)$/, loader: 'file?name=assets/[hash].[ext]' },
-      { test: /\.html$/, loader: 'raw' },
+      { test: /\.css$/, loader: 'style!css' },
       { test: /\.ts$/, loader: 'typescript-simple' }
     ],
     noParse: [
       /rtts_assert\/src\/rtts_assert/
     ]
   },
-
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
       name: 'angular2',
@@ -64,5 +66,6 @@ module.exports = {
     new webpack.optimize.DedupePlugin(),
     new webpack.HotModuleReplacementPlugin()
   ]
-
 };
+
+module.exports = config;
