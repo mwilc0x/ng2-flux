@@ -48,7 +48,7 @@ export class Header {
     this.search = this.builder.group({
       query: ["", Validators.required], // required
     });
-    
+
   }
 
   submit(event) {

@@ -7,9 +7,9 @@ import {Loader} from '../loader/loader';
 
 @Component({
     selector: 'news',
-    properties: {
-      news: 'news'
-    },
+    properties: [
+      'news'
+    ],
     appInjector: [Actions]
 })
 @View({

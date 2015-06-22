@@ -4,7 +4,6 @@ import {bootstrap, Component, View} from 'angular2/angular2';
 import {RouteConfig, RouterOutlet, RouterLink} from 'angular2/router';
 import {bind} from 'angular2/di';
 import * as Dispatcher from './utils/dispatcher';
-import {Header} from './components/header/header';
 import {Home} from './components/home/home';
 import {News} from './components/news/news';
 
@@ -12,9 +11,8 @@ import {News} from './components/news/news';
   selector:'app'
 })
 @View({
-  directives: [ RouterOutlet, RouterLink, Home, Header ],
+  directives: [ RouterOutlet, RouterLink, Home ],
   template: `
-    <header></header>
 
     <div class="container home">
 
@@ -31,7 +29,7 @@ import {News} from './components/news/news';
 ])
 export class App {
 	constructor() {
-		Dispatcher.startRecording();
-		Dispatcher.listenToHotKeys();
+		//Dispatcher.startRecording();
+		//Dispat  cher.listenToHotKeys();
 	}
 }

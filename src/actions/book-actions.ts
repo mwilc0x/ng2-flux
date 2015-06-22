@@ -20,6 +20,8 @@ export class Actions implements IBookActions {
       .then(r => r.json())
       .then((r) => {
 
+        console.log('yeah man got it...', r)
+
         Dispatcher.dispatch({
           type: 'FETCHED_BOOKS',
           data: r

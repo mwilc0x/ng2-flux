@@ -4,9 +4,9 @@ import {Component, View} from 'angular2/angular2';
 
 @Component({
     selector: 'book',
-    properties: {
-	  book: 'book'
-    }
+    properties: [
+	     'book'
+    ]
 })
 @View({
     template: `<p>{{book.index}}: {{book.summary}}</p>`
