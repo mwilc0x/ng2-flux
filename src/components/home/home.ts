@@ -35,6 +35,7 @@ export class Home {
 
   update() {
     this.lists = this._bookStore.getBooks();
+    console.log('cool got the books in the store', this.lists)
   }
 
 }

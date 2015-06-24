@@ -1,8 +1,8 @@
 /// <reference path="../typings/tsd.d.ts" />
 
-import {bootstrap, Component, View} from 'angular2/angular2';
-import {RouteConfig, RouterOutlet, RouterLink} from 'angular2/router';
-import {bind} from 'angular2/di';
+import { Component, View } from 'angular2/angular2';
+import {RouteConfig, RouterOutlet, Router } from 'angular2/router';
+import {BrowserLocation} from 'angular2/src/router/browser_location';
 import * as Dispatcher from './utils/dispatcher';
 import {Home} from './components/home/home';
 import {News} from './components/news/news';
@@ -11,25 +11,24 @@ import {News} from './components/news/news';
   selector:'app'
 })
 @View({
-  directives: [ RouterOutlet, RouterLink, Home ],
+  directives: [ Home, RouterOutlet ],
   template: `
+      <div class="container home">
 
-    <div class="container home">
+        <home></home>
 
-      <main>
-        <router-outlet></router-outlet>
-      </main>
-
-    </div>
+      </div>
   `,
 })
 @RouteConfig([
-  { path: '/', as: 'home', component: Home },
-  { path: '/news', as: 'news', component: News }
+  { path: '/', component: Home, as: 'home'  },
+  { path: '/news', component: News, as: 'news' }
 ])
 export class App {
-	constructor() {
-		//Dispatcher.startRecording();
-		//Dispat  cher.listenToHotKeys();
+
+	constructor(router: Router, browserLocation: BrowserLocation) {
+    //let uri = browserLocation.path();
+    //router.navigate(uri);
 	}
+
 }

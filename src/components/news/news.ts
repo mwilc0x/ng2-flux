@@ -7,9 +7,7 @@ import {Loader} from '../loader/loader';
 
 @Component({
     selector: 'news',
-    properties: [
-      'news'
-    ],
+    properties: ['news'],
     appInjector: [Actions]
 })
 @View({
@@ -35,7 +33,6 @@ export class News {
     this._newsStore.addChangeListener(this.update.bind(this))
 
     actions.getHackerNews();
-
   }
 
   update(news) {

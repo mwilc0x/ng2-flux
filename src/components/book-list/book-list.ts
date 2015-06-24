@@ -6,9 +6,7 @@ import {Loader} from '../loader/loader'
 
 @Component({
     selector: 'book-list',
-    properties: [
-      'lists'
-    ]
+    properties: ['lists']
 })
 @View({
     directives: [NgIf, NgFor, Book, Loader],
