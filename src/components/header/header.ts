@@ -5,10 +5,11 @@ import {Actions} from '../../actions/book-actions';
 import * as BookStore from '../../stores/book-store';
 import {FormBuilder, Validators, formDirectives, ControlGroup} from 'angular2/forms';
 import {RouterOutlet, RouterLink} from 'angular2/router';
+import {Inject} from 'angular2/di';
 
 @Component({
   selector: 'header',
-  appInjector: [Actions]
+  appInjector: [Actions, FormBuilder]
 })
 @View({
   directives: [formDirectives, RouterOutlet, RouterLink],
@@ -25,9 +26,9 @@ import {RouterOutlet, RouterLink} from 'angular2/router';
               <li><a router-link="news">Hacker News</a></li>
             </ul>
 
-          <form class="navbar-form navbar-right" [control-group]="search">
+          <form class="navbar-form navbar-right" onsubmit="return false;" [ng-form-model]="searchForm">
             <div class="form-group">
-              <input type="text" (keyup)="submit($event)" control="query" placeholder="Book name ..." class="form-control">
+              <input type="text" #tquery (keyup)="submit(tquery)" ng-control="query" placeholder="Book name ..." class="form-control">
             </div>
           </form>
         </div>
@@ -37,24 +38,19 @@ import {RouterOutlet, RouterLink} from 'angular2/router';
 })
 export class Header {
 
-  myForm: ControlGroup;
   builder: FormBuilder;
-  search: ControlGroup;
+  searchForm: ControlGroup;
 
-  constructor(private actions: Actions) {
+  constructor(@Inject(FormBuilder) fb: FormBuilder, private actions: Actions) {
 
-    this.builder = new FormBuilder()
-
-    this.search = this.builder.group({
+    this.searchForm = fb.group({
       query: ["", Validators.required], // required
     });
 
   }
 
-  submit(event) {
-    event.preventDefault();
-
-    this.actions.search(this.search.value.query);
+  submit(query:{value:string}) {
+    this.actions.search(query.value);
   }
 
 }

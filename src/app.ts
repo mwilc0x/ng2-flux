@@ -6,13 +6,17 @@ import {BrowserLocation} from 'angular2/src/router/browser_location';
 import * as Dispatcher from './utils/dispatcher';
 import {Home} from './components/home/home';
 import {News} from './components/news/news';
+import {Header} from './components/header/header';
 
 @Component({
   selector:'app'
 })
 @View({
-  directives: [ Home, RouterOutlet ],
+  directives: [ Home, Header, RouterOutlet ],
   template: `
+
+      <header></header>
+
       <div class="container home">
 
         <home></home>
