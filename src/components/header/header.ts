@@ -2,17 +2,16 @@
 
 import {Component, View} from 'angular2/angular2';
 import {Actions} from '../../actions/book-actions';
-import * as BookStore from '../../stores/book-store';
-import {FormBuilder, Validators, formDirectives, ControlGroup} from 'angular2/forms';
+import {Validators, ControlGroup, FormBuilder, NgModel, NgFormModel} from 'angular2/forms';
 import {RouterOutlet, RouterLink} from 'angular2/router';
 import {Inject} from 'angular2/di';
 
 @Component({
   selector: 'header',
-  appInjector: [Actions, FormBuilder]
+  appInjector: [FormBuilder, Actions]
 })
 @View({
-  directives: [formDirectives, RouterOutlet, RouterLink],
+  directives: [NgModel, NgFormModel, RouterOutlet, RouterLink],
   template:`
     <nav class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
@@ -38,13 +37,15 @@ import {Inject} from 'angular2/di';
 })
 export class Header {
 
-  builder: FormBuilder;
   searchForm: ControlGroup;
+  query: string;
 
   constructor(@Inject(FormBuilder) fb: FormBuilder, private actions: Actions) {
 
+    this.query= '';
+
     this.searchForm = fb.group({
-      query: ["", Validators.required], // required
+      query: ["Hello", Validators.required], // required
     });
 
   }

@@ -4,6 +4,7 @@ import {Component, View, NgIf, NgFor} from 'angular2/angular2';
 import {Actions} from '../../actions/news-actions';
 import * as NewsStore from '../../stores/news-store';
 import {Loader} from '../loader/loader';
+import {Inject} from 'angular2/di';
 
 @Component({
     selector: 'news',
@@ -26,7 +27,7 @@ export class News {
   _newsStore: any;
   news: any;
 
-  constructor(private actions: Actions) {
+  constructor(@Inject(Actions) actions: any) {
 
     this._newsStore = NewsStore;
 

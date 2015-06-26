@@ -4,6 +4,7 @@ import {Component, View} from 'angular2/angular2';
 import {BookList} from '../book-list/book-list';
 import {Actions} from '../../actions/book-actions';
 import * as BookStore from '../../stores/book-store';
+import {Inject} from 'angular2/di';
 
 @Component({
   selector: 'home',
@@ -21,7 +22,7 @@ export class Home {
   _actions: any;
   _bookStore: any;
 
-  constructor(actions: Actions) {
+  constructor(@Inject(Actions) actions: any) {
 
     this.lists = [];
 
@@ -35,7 +36,6 @@ export class Home {
 
   update() {
     this.lists = this._bookStore.getBooks();
-    console.log('cool got the books in the store', this.lists)
   }
 
 }
