@@ -1,12 +1,13 @@
 /// <reference path="../../../typings/tsd.d.ts" />
 
-import {Component, View, NgFor, NgIf} from 'angular2/angular2';
+import {Component, View, onInit, onChange, onDestroy, NgFor, NgIf} from 'angular2/angular2';
 import {Book} from '../book/book';
 import {Loader} from '../loader/loader'
 
 @Component({
     selector: 'book-list',
-    properties: ['lists']
+    properties: ['lists'],
+    lifecycle: [onInit, onChange, onDestroy]
 })
 @View({
     directives: [NgIf, NgFor, Book, Loader],
@@ -22,4 +23,18 @@ import {Loader} from '../loader/loader'
         </div>
     `
 })
-export class BookList { }
+export class BookList {
+
+  onInit() {
+    console.log('BookList Initialized');
+  }
+
+  onChange(changes) {
+    console.log('BookList Properties Changed', changes)
+  }
+
+  onDestroy() {
+    console.log('BookList Destroyed')
+  }
+
+}
