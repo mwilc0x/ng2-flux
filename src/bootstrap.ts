@@ -9,10 +9,15 @@ import {App} from 'app';
 // include any injectables
 import {routerInjectables} from 'angular2/router';
 
+import {Actions as BookActions} from './actions/book-actions';
+import {Actions as NewsActions} from './actions/news-actions';
+
 // bootstrap the Angular app with bindings
 bootstrap(App, [
   // define any componentInjectableBindings
-  routerInjectables
+  routerInjectables,
+  BookActions,
+  NewsActions
 ]).then(
   success => console.log(success),
   error => console.log(error)
