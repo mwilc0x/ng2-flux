@@ -14,8 +14,6 @@ import {Header} from './components/header/header';
   directives: [ Header, RouterOutlet ],
   template: `
 
-      <header></header>
-
       <div class="container home">
 
         <router-outlet></router-outlet>
