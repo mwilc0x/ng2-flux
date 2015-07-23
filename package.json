@@ -18,9 +18,9 @@
   "license": "MIT",
   "homepage": "https://github.com/mjw56/ng2-flux",
   "dependencies": {
-    "angular2": "2.0.0-alpha.31",
+    "angular2": "2.0.0-alpha.32",
     "reflect-metadata": "^0.1.0",
-    "rtts_assert": "2.0.0-alpha.31",
+    "rtts_assert": "2.0.0-alpha.32",
     "zone.js": "^0.5.1"
   },
   "devDependencies": {
